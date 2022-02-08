@@ -195,6 +195,79 @@ app.post("/editvehiculo", (recibido, respuesta) => {
 
 });
 
+//eliminar  un vehiculo
+app.post("/deletevehiculo", (recibido, respuesta) => { 
+  const id_vehiculo = recibido.body.id_vehiculo;
+ 
+  
+  const sql = "delete from lista_vehiculos where id_vehiculo=" + "'"+ id_vehiculo+"'";
+  console.log(sql);
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+
+    console.log("Result: " + JSON.stringify(result,null,2));
+    respuesta.json(result);
+  });
+
+});
+
+
+//crear servicio
+app.post("/crearservicio", (recibido, respuesta) => { 
+  const id_usuario = recibido.body.id_usuario;
+  const marca=recibido.body.marca;
+  const modelo= recibido.body.modelo;
+  const matricula=recibido.body.matricula;
+  const servicio=recibido.body.servicio;
+  const ultima_revision=recibido.body.ultima_revision;
+  const proxima_revision=recibido.body.proxima_revision;
+  const comentarios=recibido.body.comentarios
+  const sql = "INSERT INTO lista_vehiculos (id_usuario, marca, modelo,servicio,ultima_revision,proxima_revision,comentarios) values  ("+"'"+id_usuario+"',"+"'"+marca+"',"+"'"+modelo+"',"+ "'"+matricula+"',"+ "'"+servicio+"',"+"'"+ultima_revision+"',"+"'"+proxima_revision+"',"+ "'"+comentarios+"')";
+ 
+  console.log(sql);
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+
+    console.log("Result: " + JSON.stringify(result,null,2));
+    respuesta.json(result);
+  });
+
+});
+
+//modificar datos de un servicio
+app.post("/editservicio", (recibido, respuesta) => { 
+  const id_usuario = recibido.body.id_usuario;
+  const id_vehiculo= recibido.body.id_vehiculo;
+  const matricula= recibido.body.matricula;
+  
+  const sql = "update lista_servicios set id_usuario='"+ id_usuario + "',matricula= '"+matricula+ "' where id_vehiculo=" + id_vehiculo;
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+
+    console.log("Result: " + JSON.stringify(result,null,2));
+    respuesta.json(result);
+  });
+
+});
+
+
+//eliminar  un servicio
+app.post("/deleteservicio", (recibido, respuesta) => { 
+  const id_servicio = recibido.body.id_servicio;
+ 
+  
+  const sql = "delete from lista_servicios where id_servicio=" + "'"+ id_servicio+"'";
+  console.log(sql);
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+
+    console.log("Result: " + JSON.stringify(result,null,2));
+    respuesta.json(result);
+  });
+
+});
+
+
 //Iniciando el servidor, escuchando...
 app.listen(app.get('port'),()=>{
     console.log(`Server listening on port ${app.get('port')}`);
