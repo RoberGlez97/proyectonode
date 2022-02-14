@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7 - Trimestre 2</title>
+    <script src="index.js"></script>r
+   
+
+</head>
+<style>
+    body{
+        background-color: rgb(0, 0, 0);
+    }
+    form{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        padding:5rem;
+        background-color: rgb(0, 0, 0);
+        font-size: x-large;
+        font-weight: bold;
+    }
+    table{background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 2rem;
+
+    }
+
+
+    td{
+        padding: 1rem;
+       
+
+    }
+    input{
+        background-color: rgb(202, 198, 198);
+        color: rgb(0, 0, 0);
+    }
+
+    .botones{
+        background-color: rgb(88, 87, 87);
+        width: 5rem;
+        height: 2rem;
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        
+    }
+
+
+    
+    .texto{
+        width: 13rem;
+    }
+    
+   
+</style>
+
+<body>
+    <form id="formu">
+        
+        <table>
+            <tr>
+                <td colspan=2 class="cabe"><h3>Datos de Usuario Filtrado por ID</h3></td>		
+            </tr>
+        
+            <tr>
+                <td class="letras">id_usuario</td>
+                <td><input type="text" name="id_usuario" class="texto" placeholder="Introduce un id_usuario"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="centrados">
+                <input type="submit" Value="Enviar" class="botones" readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">Nombre</td>
+                <td><input type="text" name="nombre" class="texto" placeholder="" readonly></td>
+            </tr>
+          
+           
+            <tr>
+                <td class="letras">Apellido 1</td>
+                <td><input type="text"  class="texto" name="apellido1" readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">Apellido 2</td>
+                <td><input type="text"  class="texto" name="apellido2" readonly></td>
+            </tr>
+           
+            <tr>
+                <td class="letras">Fecha Alta</td>
+                <td><input type="text" name="alta" readonly></td>
+            </tr>
+
+            <tr>
+                <td class="letras">Password</td>
+                <td><input type="text" name="password" readonly></td>
+            </tr>
+            
+        
+            <tr>
+                <td class="letras">administrador:</td>
+                <td><input type="text" name="administrador" class="texto" readonly></td>
+            </tr>
+            
+            
+            
+        </table>
+
+      
+
+
+    </form>	
+
+  
+    
+</body>
+</html>
