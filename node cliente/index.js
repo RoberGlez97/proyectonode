@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    document.querySelector("input[type='submit']").onclick = function(){
+    document.getElementById("submit1").onclick = function(){
         this.disabled = true;
 
         //Paso 1: crear el objeto XMLHttpRequest
@@ -20,11 +20,8 @@ window.onload = function(){
         usuario.addEventListener('load',function(datos){
             let respuesta = JSON.parse(datos.target.response);
             document.querySelector("input[type='submit']").disabled = false;
-
-            
-        
             var formulario= document.getElementById("formu");
-            var valor=formulario.id_usuario.value;
+            var valor=formulario.id_usuario.value-1;//menos uno para que no falle y ponga el siguiente en vez de el que es
             var camponombre=respuesta[valor].nombre;
             var campoapellido1=respuesta[valor].apellido1;
             var campoapellido2=respuesta[valor].apellido2;
@@ -162,6 +159,70 @@ window.onload = function(){
 
 
 
+    document.getElementById("submit2").onclick = function(){
+        this.disabled = true;
 
-}
+        //Paso 1: crear el objeto XMLHttpRequest
+        let vehiculos; //variable que va a almacenar el objeto
+        if(window.XMLHttpRequest){
+            vehiculos = new XMLHttpRequest();
+        }
+        else{
+            vehiculos = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //Paso 2: crear la peticion de datos
+        //Parámetros: el verbo, la direccion del recurso
+        vehiculos.open('GET',"http://localhost:3000/vehiculos");
+
+        //Paso 3: crear la funcion para manejar los datos que me llegan (se asocia al evento LOAD)
+        vehiculos.addEventListener('load',function(datos){
+            let respuestaa = JSON.parse(datos.target.response);
+            
+         
+            
+        
+            var formulario= document.getElementById("formu1");
+            var valor1=formulario.idvehiculo.value-1;//menos uno para que no falle y ponga el siguiente en vez de el que es
+            var campoidusuario=respuestaa[respuestaa.idvehiculo].id_usuario;
+            var campomarca=respuestaa[valor1].marca;
+            var campomodelo=respuestaa[valor1].modelo;
+            var campomatricula=respuestaa[valor1].matricula
+            var campocombustible=respuestaa[valor1].combustible;
+            var campotipomotor=respuestaa[valor1].tipo_motor;
+            formulario.id_usuario.value=campoidusuario;
+            formulario.marca.value=campomarca;
+            formulario.modelo.value=campomodelo;
+            formulario.matricula.value=campomatricula;
+            formulario.combustible.value=campocombustible;
+            formulario.tipo_motor.value=campotipomotor;
+
+            
+
+
+           
+
+/*
+            for (const key in respuesta) {  //mostramos cada objeto
+                console.log(respuesta[key])
+            }
+        
+
+            for (const key in respuesta) { //mostramos los valores de cada objeto
+                for (const dato in respuesta[key]) {
+                    console.log(respuesta[key][dato]);
+                }
+              
+            }
+*/
+        
+        });
+
+        //Paso 4: enviar la peticion
+        vehiculos.send();
+
+      
+    }
+}   
+
 

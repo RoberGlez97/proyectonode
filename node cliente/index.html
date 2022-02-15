@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea 7 - Trimestre 2</title>
-    <script src="index.js"></script>r
+    <title>Taller</title>
+    <script src="index.js"></script>
+    
+   
    
 
 </head>
@@ -13,11 +15,17 @@
     body{
         background-image: url("Captura.PNG") 
     }
+
+    #formu , #formu1 ,#formu2{
+        display:inline-block
+        
+    }
     form{
         display: flex;
         justify-content:space-around;
         align-items: center;
-        padding:5rem;
+        padding:3rem;
+        padding-right: 4rem;
         background-color: rgb(0, 0, 0, 0.2);
         font-size: x-large;
         font-weight: bold;
@@ -43,7 +51,7 @@
 
     .usuarioo{
         display: flex;
-        display: flex;
+        
         justify-content:space-around;
         align-items: center;
         border: 2px solid rgb(190, 189, 189);
@@ -82,6 +90,24 @@
         width: 13rem;
     }
     
+    .botonnn{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        width: 20rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: x-large;
+        display: flex;
+        align-items: center;justify-content: center;
+        margin: 0 auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .botonnn:hover{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
    
 </style>
 
@@ -99,7 +125,116 @@
             </tr>
             <tr>
                 <td colspan="2" class="centrados">
-                <input type="submit" Value="Enviar" class="botones" readonly></td>
+                <input type="submit" Value="Enviar" class="botones" id="submit1" readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">Nombre</td>
+                <td><input type="text" name="nombre" class="texto" placeholder="" readonly></td>
+            </tr>
+          
+           
+            <tr>
+                <td class="letras">Apellido 1</td>
+                <td><input type="text"  class="texto" name="apellido1" readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">Apellido 2</td>
+                <td><input type="text"  class="texto" name="apellido2" readonly></td>
+            </tr>
+           
+            <tr>
+                <td class="letras">Fecha Alta</td>
+                <td><input type="text" name="alta" readonly></td>
+            </tr>
+
+            <tr>
+                <td class="letras">Password</td>
+                <td><input type="text" name="password" readonly></td>
+            </tr>
+            
+        
+            <tr>
+                <td class="letras">Administrador</td>
+                <td><input type="text" name="administrador" class="texto" readonly></td>
+            </tr>
+            
+            
+            
+        </table>
+
+      
+
+
+    </form>	
+    <form id="formu1">
+        
+        <table>
+            <tr>
+                <td colspan=2 class="cabe"><h3>Datos de Vehiculo Filtrado por ID</h3></td>		
+            </tr>
+        
+            <tr>
+                <td class="letras">id_vehiculo</td>
+                <td><input type="text" name="idvehiculo" class="texto" placeholder="Introduce un id_vehiculo"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="centrados">
+                <input type="submit" Value="Enviar" class="botones" id="submit2"  readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">id_usuario</td>
+                <td><input type="text" name="id_usuario" class="texto" placeholder="" readonly></td>
+            </tr>
+          
+           
+            <tr>
+                <td class="letras">Marca</td>
+                <td><input type="text"  class="texto" name="Marca" readonly></td>
+            </tr>
+            <tr>
+                <td class="letras">Modelo</td>
+                <td><input type="text"  class="texto" name="Modelo" readonly></td>
+            </tr>
+           
+            <tr>
+                <td class="letras">Matricula</td>
+                <td><input type="text" name="matricula" readonly></td>
+            </tr>
+
+            <tr>
+                <td class="letras">combustible</td>
+                <td><input type="text" name="combustible" readonly></td>
+            </tr>
+            
+        
+            <tr>
+                <td class="letras">Tipo motor</td>
+                <td><input type="text" name="tipo motor" class="texto" readonly></td>
+            </tr>
+            
+            
+            
+        </table>
+
+      
+
+
+    </form>	
+
+    <form id="formu2">
+        
+        <table>
+            <tr>
+                <td colspan=2 class="cabe"><h3>Datos de Usuario Filtrado por ID</h3></td>		
+            </tr>
+        
+            <tr>
+                <td class="letras">id_usuario</td>
+                <td><input type="text" name="id_usuario" class="texto" placeholder="Introduce un id_usuario"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="centrados">
+                <input type="submit" Value="Enviar" class="botones" id="submit3"  readonly></td>
             </tr>
             <tr>
                 <td class="letras">Nombre</td>
@@ -141,7 +276,8 @@
 
     </form>	
 
-    <input type="button" value="Mostrar Todos los usuarios">
+
+    <input type="button" value="Mostrar Todos los usuarios" class="botonnn">
     <div class="contenedorinfo"></div>
 
   
