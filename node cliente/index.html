@@ -108,6 +108,12 @@
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
     }
+
+    #mapa{
+        display: block;
+        align-items: center;
+        margin: 0 auto;
+    }
    
 </style>
 
@@ -161,8 +167,62 @@
             
             
         </table>
+    </form>	
 
-      
+        <form id="formu2">
+        
+            <table>
+                <tr>
+                    <td colspan=2 class="cabe"><h3>Datos de Servicio Filtrado por ID</h3></td>		
+                </tr>
+            
+                <tr>
+                    <td class="letras">id_servicio</td>
+                    <td><input type="text" name="id_servicio" class="texto" placeholder="Introduce un id_usuario"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="centrados">
+                    <input type="submit" Value="Enviar" class="botones" id="submit3"  readonly></td>
+                </tr>
+                <tr>
+                    <td class="letras">id_vehiculo</td>
+                    <td><input type="text" name="id_vehiculo" class="texto" placeholder="" readonly></td>
+                </tr>
+              
+               
+                <tr>
+                    <td class="letras">Matricula</td>
+                    <td><input type="text"  class="texto" name="matricula" readonly></td>
+                </tr>
+                <tr>
+                    <td class="letras">Servicio</td>
+                    <td><input type="text"  class="texto" name="servicio" readonly></td>
+                </tr>
+
+                <tr>
+                    <td class="letras">Ultima revision</td>
+                    <td><input type="text"  class="texto" name="ultima_revision" readonly></td>
+                </tr>
+
+                <tr>
+                    <td class="letras">Proxima revision</td>
+                    <td><input type="text"  class="texto" name="proxima_revision" readonly></td>
+                </tr>
+
+                <tr>
+                    <td class="letras">Comentarios</td>
+                    <td><input type="text"  class="texto" name="comentarios" readonly></td>
+                </tr>
+               
+                
+                
+                
+                
+            </table>
+    
+          
+    
+    
 
 
     </form>	
@@ -189,11 +249,11 @@
            
             <tr>
                 <td class="letras">Marca</td>
-                <td><input type="text"  class="texto" name="Marca" readonly></td>
+                <td><input type="text"  class="texto" name="marca" readonly></td>
             </tr>
             <tr>
                 <td class="letras">Modelo</td>
-                <td><input type="text"  class="texto" name="Modelo" readonly></td>
+                <td><input type="text"  class="texto" name="modelo" readonly></td>
             </tr>
            
             <tr>
@@ -209,7 +269,7 @@
         
             <tr>
                 <td class="letras">Tipo motor</td>
-                <td><input type="text" name="tipo motor" class="texto" readonly></td>
+                <td><input type="text" name="tipo_motor" class="texto" readonly></td>
             </tr>
             
             
@@ -221,66 +281,12 @@
 
     </form>	
 
-    <form id="formu2">
-        
-        <table>
-            <tr>
-                <td colspan=2 class="cabe"><h3>Datos de Usuario Filtrado por ID</h3></td>		
-            </tr>
-        
-            <tr>
-                <td class="letras">id_usuario</td>
-                <td><input type="text" name="id_usuario" class="texto" placeholder="Introduce un id_usuario"></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="centrados">
-                <input type="submit" Value="Enviar" class="botones" id="submit3"  readonly></td>
-            </tr>
-            <tr>
-                <td class="letras">Nombre</td>
-                <td><input type="text" name="nombre" class="texto" placeholder="" readonly></td>
-            </tr>
-          
-           
-            <tr>
-                <td class="letras">Apellido 1</td>
-                <td><input type="text"  class="texto" name="apellido1" readonly></td>
-            </tr>
-            <tr>
-                <td class="letras">Apellido 2</td>
-                <td><input type="text"  class="texto" name="apellido2" readonly></td>
-            </tr>
-           
-            <tr>
-                <td class="letras">Fecha Alta</td>
-                <td><input type="text" name="alta" readonly></td>
-            </tr>
+   
 
-            <tr>
-                <td class="letras">Password</td>
-                <td><input type="text" name="password" readonly></td>
-            </tr>
-            
-        
-            <tr>
-                <td class="letras">administrador:</td>
-                <td><input type="text" name="administrador" class="texto" readonly></td>
-            </tr>
-            
-            
-            
-        </table>
-
-      
-
-
-    </form>	
-
-
-    <input type="button" value="Mostrar Todos los usuarios" class="botonnn">
+    <input type="button" value="Mostrar Mapa" class="botonnn" id="Bmapa">
+    <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.2991876419587!2d-4.46243788439475!3d36.69134778151846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f9c45623d2c3%3A0x7a634bd28c0cf953!2sMEDAC%20Nova%20-%20Centro%20Tecnol%C3%B3gico%20de%20FP!5e0!3m2!1ses!2ses!4v1645002171573!5m2!1ses!2ses" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <input type="button" value="Mostrar Todos los usuarios" id="allusuarios" class="botonnn">
     <div class="contenedorinfo"></div>
-
-  
     
 </body>
 </html>

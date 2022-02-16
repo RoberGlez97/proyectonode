@@ -63,6 +63,20 @@ app.get("/vehiculos", (recibido, respuesta) => {
 
 })
 
+//lista de servicios
+app.get("/servicios", (recibido, respuesta) => { 
+  const sql = "SELECT * from lista_servicios";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+
+    console.log("Result: " + JSON.stringify(result,null,2));
+    respuesta.json(result);
+  });
+
+})
+
+
+
 
 //Lista de vehículos filtrando por ID de usuario
 app.get("/usuario/vehiculo", (recibido, respuesta) => { 
